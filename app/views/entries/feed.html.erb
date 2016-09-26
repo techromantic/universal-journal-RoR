@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<h1>
+  Journal Entries for
+  <%= Time.now.strftime("%m/%d/%Y")%>
 
-<div class="h1">Today's Journal Entries</div>
+</h1>
 
+<div class="h1">
+ </div>
 
 <table>
   <thead>
@@ -26,6 +31,7 @@
         <td><%= entry.city %></td>
         <td><%= entry.content %></td>
         <td><%= entry.points %></td>
+        <td><%= entry.created_at.strftime("Submitted: %m/%d/%Y") %></td>
         <td><%= link_to 'Show', entry %></td>
         
       </tr>

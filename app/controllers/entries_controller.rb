@@ -8,7 +8,7 @@ class EntriesController < ApplicationController
   end
 
   def feed
-    @entries = Entry.all
+    @entries = Entry.today
   end 
   # GET /entries/1
   # GET /entries/1.json
