@@ -8,7 +8,7 @@ class EntriesController < ApplicationController
   end
 
   def feed
-    @entries = Entry.today
+    @entries = Entry.today.order('points DESC')
   end 
   # GET /entries/1
   # GET /entries/1.json
