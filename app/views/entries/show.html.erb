@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @entry.name %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @entry.username %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @entry.country %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @entry.city %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @entry.content %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= @entry.points %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>
