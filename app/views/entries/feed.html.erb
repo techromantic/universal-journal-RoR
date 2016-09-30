@@ -93,6 +93,25 @@
         
       </tr>
     <% end %>
+   
+            <% @entries.each do |entry| %>
+            <div class="media">
+          <div class="media-left">
+            <a href="#">
+              <img class="media-object" src="..." alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading"><%= entry.name %> <br><%= entry.country %> - <%= entry.city %> - <%= entry.content %> - <%= entry.points %>   </h4>
+
+            <%= entry.content %>
+            <%= entry.created_at.strftime("Submitted: %m/%d/%Y") %>
+           
+           <%= link_to 'Show', entry %>
+
+          </div>
+        </div>
+         <% end %>
   </tbody>
 </table>
 
