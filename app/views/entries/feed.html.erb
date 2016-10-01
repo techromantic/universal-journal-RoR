@@ -102,7 +102,12 @@
             </a>
           </div>
           <div class="media-body">
-            <h4 class="media-heading"><%= entry.name %> <br><%= entry.country %> - <%= entry.city %> - <%= entry.content %> - <%= entry.points %>   </h4>
+            <h4 class="media-heading" > 
+            <span style="font-size:24px"><%= entry.name %></span><br>
+            <span style="font-size:20px"><%= entry.username %></span><br>
+            <span style="font-size:20px"><%= entry.country %>, <%= entry.city %></span>
+            <span><%= entry.points %></span>
+             </h4>
 
             <%= entry.content %>
             <%= entry.created_at.strftime("Submitted: %m/%d/%Y") %>
