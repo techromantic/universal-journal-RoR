@@ -103,17 +103,18 @@
           </div>
           <div class="media-body">
             <h4 class="media-heading" > 
-            <span style="font-size:24px"><%= entry.name %></span><br>
-            <span style="font-size:20px"><%= entry.username %></span><br>
-            <span style="font-size:20px"><%= entry.country %>, <%= entry.city %></span>
+            <span style="font-size:20px"><%= entry.name %></span>
+            <span style="align-right"><%= entry.created_at.strftime("Submitted: %m/%d/%Y") %>
+                                      <%= link_to 'Show', entry %></span><br>
+            <span style="font-size:12px"><%= entry.username %></span><br>
+            <span style="font-size:10px"><%= entry.country %>, <%= entry.city %></span>
             <span><%= entry.points %></span>
              </h4>
 
-            <%= entry.content %>
-            <%= entry.created_at.strftime("Submitted: %m/%d/%Y") %>
-           
-           <%= link_to 'Show', entry %>
-
+                  <div class="media-content">
+                          <%= entry.content %>
+                          
+                         </div>
           </div>
         </div>
          <% end %>
