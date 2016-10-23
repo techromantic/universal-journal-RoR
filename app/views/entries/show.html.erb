@@ -1,24 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @entry.name %>
-</p>
-
-<p>
   <strong>Username:</strong>
-  <%= @entry.username %>
+  <%= @entry.user.username%>
 </p>
 
 <p>
   <strong>Country:</strong>
-  <%= @entry.country %>
+  <%= @entry.user.country %>
 </p>
 
 <p>
   <strong>City:</strong>
-  <%= @entry.city %>
+  <%= @entry.user.city %>
 </p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @entry.name%>
+</p>
+
+
+
 
 <p>
   <strong>Content:</strong>
