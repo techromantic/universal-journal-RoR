@@ -23,21 +23,7 @@
   </thead>
 
   <tbody>
-    <% @entries.each do |entry| %>
-      <tr>
-        <td><%= entry.user.username %></td>
-        <td><%= entry.name %></td>
-        <td><%= entry.user.country %></td>
-        <td><%= entry.user.city %></td>
-        <td><%= entry.content %></td>
-        <td><%= entry.points %></td>
-        <td>Posted: <%= time_ago_in_words(entry.created_at) %> ago,</td>
-        <td>Edited: <%= time_ago_in_words(entry.updated_at) %> ago,</td>
-        <td><%= link_to 'Show', entry %></td>
-        
-      </tr>
-    <% end %>
-   
+  
             <% @entries.each do |entry| %>
             <div class="media">
           <div class="media-right media-middle">
@@ -63,9 +49,18 @@
             <div class="col-md-3">
               <div class="media-info">
                       <span class= "pull-right" style="font-size:12px; color: blue">
-                      <%= entry.user.username %>
+                      <% if defined? entry.user.username? %>
+                      <%= entry.user.username? %>
+                      <% else %>
+                      <p>Anonymous</p>
+                      <% end %>
                       </span> <br>
+                  
+                       <% if defined? entry.user.country? %>
                   <span class= "pull-right" style="font-size:10px"><%= entry.user.country %>, <%= entry.user.city %></span> <br>
+                       <% else %> 
+                       <p>Unknown</p>
+                       <% end %>
                   <span class= "pull-right" style="font-size:20px; height:50px; line-height:50px">  <b><%= entry.points %></b>  </span>
              </div>   
             </div>

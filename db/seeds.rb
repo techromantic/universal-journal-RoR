@@ -14,5 +14,5 @@
 	city = Faker::Address.city
 	content = Faker::Lorem.paragraph
 	points = Faker::Number.between(1,900)
-	Entry.create(name: name, username: uname, country: country, city: city, content: content, points: points)
+	Entry.create(user_id: 1, name: name, content: content, points: points)
 end
