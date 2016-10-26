@@ -1,10 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+ 
+                   
+                     
 <p>
   <strong>Username:</strong>
+   <% if defined? entry.user.username? %>
   <%= @entry.user.username%>
+   <% else %>
+   <p>Anonymous</p>
+  <% end %>
 </p>
 
+
+                      
 <p>
   <strong>Country:</strong>
   <%= @entry.user.country %>

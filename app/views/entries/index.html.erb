@@ -19,9 +19,17 @@
     <% @entries.each do |entry| %>
       <tr>
         <td><%= entry.name %></td>
-        <td><%= entry.user.username %></td>
-        <td><%= entry.user.country %></td>
-        <td><%= entry.user.city %></td>
+          <% if defined? entry.user.username? %>
+                      <td><%= entry.user.username? %></td>
+                      <% else %>
+                      <td>Anonymous</td>
+                      <% end %>
+          <% if defined? entry.user.country? %>            
+                  <td><%= entry.user.country %></td>
+                  <td><%= entry.user.city %></td>
+                  <% else %> 
+                  <td> Unknown Location </td>
+                  <% end %> 
         <td><%= entry.content %></td>
         <td><%= entry.points %></td>
         <td><%= link_to 'Show', entry %></td>

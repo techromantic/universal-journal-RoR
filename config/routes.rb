@@ -3,13 +3,15 @@ Rails.application.routes.draw do
   resources :entries
 
 
-  root 'entries#feed'
+  root 'entries#index'
 
   get '/feed', :to => 'entries#feed'
+  get '/login', :to => 'sessions#new'
+
 
 get 'login', to: 'sessions#new'
 post 'login', to: 'sessions#create'
-delete 'logout', to: 'sessions#destroy'
+get 'logout', to: 'sessions#destroy'
 
 
 
