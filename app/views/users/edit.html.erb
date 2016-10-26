@@ -1,6 +1,18 @@
-<h1>Editing User</h1>
+<h1>Edit Your Profile</h1>
 
 <%= render 'form' %>
+
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>Just <%= pluralize(@user.errors.count, "thing") %> before finishing edits!</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>

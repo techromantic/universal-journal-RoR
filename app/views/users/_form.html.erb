@@ -5,18 +5,7 @@
     <p> City: <br> <%= f.text_field :city%></p>
     <p> Password: <br> <%= f.password_field :password%></p>
     <p> Password Confirmation: <br> <%= f.password_field :password_confirmation%></p>
-    <%= f.submit :Signup %> 
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2>Just <%= pluralize(@user.errors.count, "thing") %> before signing up!</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <%= f.submit :Submit %> 
 
   
 <% end %>

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
-
+  before_action :logged_in_user, only: [:edit, :update]
+  
   # GET /users
   # GET /users.json
   def index
@@ -29,11 +30,7 @@ class UsersController < ApplicationController
 
     
       if @user.save
-        flash[:success] = "Welcome to Universal Journal, #{@user.username}!"
-        
-        flash.now[:notice] = "Welcome to Universal Journal, #{@user.username}!"
-
-        redirect_to :action => :index
+        redirect_to :action => :index, :notice => "Welcome to Universal Journal!"
 
       else
         render 'new'
@@ -46,9 +43,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
-    if @user.update(user_params)
-      flash[:success] = "Your account was updated sucessfully."
-      redirect_to_entries_path
+    if @user.update_attributes(user_params)
+      redirect_to root_path, :notice => "You've updated your information!"
     else
       render 'edit'
     end
@@ -59,7 +55,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      redirect_to users_url, :notice => "Thank you for sharing with us!"
       format.json { head :no_content }
     end
   end
@@ -70,6 +66,13 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
+    def logged_in_user
+      unless logged_in?
+        
+        redirect_to login_url, :notice => "You must login to do this."
+      end 
+    end 
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:username, :email, :password, :country, :city, :points, :languages)
@@ -77,8 +80,7 @@ class UsersController < ApplicationController
 
     def require_admin
       if logged_in? && !current_user.admin?
-        flash[:danger] = "only admins can perform that action"
-        redirect_to_root_path
+        redirect_to root_path, :notice => "You aren't an admin, bub."
       end 
     end 
 end

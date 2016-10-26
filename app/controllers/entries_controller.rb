@@ -30,15 +30,12 @@ class EntriesController < ApplicationController
 
     @entry = Entry.new(entry_params)
     @entry.user = User.first
-    respond_to do |format|
       if @entry.save
-        flash[:success] = "Entry was posted!"
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
-        format.json { render :show, status: :created, location: @entry }
+        redirect_to @entry, :notice => "Thank you for sharing with us!"
+        
       else
         format.html { render :new }
       end
-    end
   end
 
   # PATCH/PUT /entries/1
