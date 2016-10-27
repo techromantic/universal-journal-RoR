@@ -29,7 +29,7 @@ class EntriesController < ApplicationController
   def create
 
     @entry = Entry.new(entry_params)
-    @entry.user = User.first
+    @entry.user = current_user
       if @entry.save
         redirect_to @entry, :notice => "Thank you for sharing with us!"
         
