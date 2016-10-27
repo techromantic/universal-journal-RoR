@@ -7,12 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-20.times do 
-	name = Faker::Company.catch_phrase
-	uname = Faker::Internet.user_name
-	country = Faker::Address.country
-	city = Faker::Address.city
-	content = Faker::Lorem.paragraph
+
 	points = Faker::Number.between(1,900)
-	Entry.create(user_id: 1, name: name, content: content, points: points)
-end
+	Entry.update_all(points: points)

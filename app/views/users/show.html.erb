@@ -1,4 +1,6 @@
+<h1 align="center"> Welcome to <%= @user.username %>'s Journal!</h1>
 
+<%= render 'entries/entry', obj: @user.entries %> 
 
 <p>
   <strong>Username:</strong>
@@ -35,5 +37,4 @@
   <%= @user.languages %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
