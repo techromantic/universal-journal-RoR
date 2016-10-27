@@ -24,10 +24,15 @@ class EntriesController < ApplicationController
   def edit
   end
 
+  def addpoint
+    @entry = Entry.find params[:id]
+    @entry.increment! :points
+  end
+
+
   # POST /entries
   # POST /entries.json
   def create
-
     @entry = Entry.new(entry_params)
     @entry.user = current_user
       if @entry.save
