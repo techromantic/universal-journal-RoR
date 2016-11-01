@@ -35,7 +35,8 @@
 
             <div class="col-md-9">
               <h4 class="media-heading" > 
-                <span style="font-size:20px"><%= entry.name %></span>
+                <span style="font-size:20px">
+                <%= link_to entry.name, entry %></span>
               </h4>
 
               <div class="media-content">
@@ -48,7 +49,7 @@
               <div class="media-info">
                       <span class= "pull-right" style="font-size:12px; color: blue">
                       <% if defined? entry.user.username? %>
-                      <%= entry.user.username %>
+                      <%= link_to entry.user.username, user_path(entry.user) %>
                       <% else %>
                       <p>Anonymous</p>
                       <% end %>
