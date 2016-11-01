@@ -55,11 +55,21 @@
                       <% end %>
                       </span> <br>
                   
-                       <% if defined? entry.user.country? %>
-                  <span class= "pull-right" style="font-size:10px"><%= entry.user.country %>, <%= entry.user.city %></span> <br>
-                       <% else %> 
-                       <p>Unknown</p>
-                       <% end %>
+                       
+
+                  <span class= "pull-right" style="font-size:10px">
+                  <% if defined? entry.country? %>
+                    <p> <%= entry.country %>, <%= entry.city %></p>
+
+                  <% elsif defined? entry.user.country %> 
+                   <p> <%= entry.user.country %>, <%= entry.user.city %></p></span> 
+                  <% else %> 
+                  <p>Unknown</p>
+                 <% end %>
+                   <br>
+                       
+                       
+                      
                   <span class= "pull-right" style="font-size:20px; height:50px; line-height:50px">  <b><%= entry.points %></b>  </span>
              </div>   
             </div>
