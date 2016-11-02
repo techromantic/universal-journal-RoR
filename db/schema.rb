@@ -24,12 +24,6 @@ ActiveRecord::Schema.define(version: 20161101170337) do
     t.string   "city"
   end
 
-  create_table "harmonies", force: :cascade do |t|
-    t.integer  "entry_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "email"
