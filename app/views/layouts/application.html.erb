@@ -5,38 +5,79 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
 </head>
 <body>
-    <nav class="navbar navbar-fixed-left navbar-minimal animate" role="navigation">
-		<div class="navbar-toggler animate">
-			<span class="menu-icon"></span>
-		</div>
-		<ul class="navbar-menu animate">
-			<li>
-				<a href="/feed/" class="animate">
-					<span class="desc animate"> Feed </span>
-					<span class="fa-lg pull-left"><i class="fa fa-globe"></i></span>
-				</a>
-			</li>
-			<li>
-				<a href="/entries/new" class="animate">
-					<span class="desc animate"> New Entry </span>
-					<span class="fa-lg pull-left"><i class="fa fa-pencil-square"></i></span>
-				</a>
-			</li>
-			<li>
-                    <% if logged_in? %>
+    
+    <nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
+    	<div class="[ container ]">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="[ navbar-header ]">
+				<button type="button" class="[ navbar-toggle ]" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="[ sr-only ]">Toggle navigation</span>
+					<span class="[ icon-bar ]"></span>
+					<span class="[ icon-bar ]"></span>
+					<span class="[ icon-bar ]"></span>
+				</button>
+				<div class="[ animbrand ]">
+					<a class="[ navbar-brand ][ animate ]" href="#">Universal Journal</a>
+				</div>
+			</div>
 
-                        <%= link_to '<span class="desc animate"> Your Journal </span>'.html_safe, user_path(current_user), :class => "animate" %>  
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="[ collapse navbar-collapse ]" id="bs-example-navbar-collapse-1">
+				<ul class="[ nav navbar-nav navbar-right ]">
+					<li class="[ visible-xs ]">
+						<form action="http://bootsnipp.com/search" method="GET" role="search">
+							<div class="[ input-group ]">
+								<input type="text" class="[ form-control ]" name="q" placeholder="Search for snippets">
+								<span class="[ input-group-btn ]">
+									<button class="[ btn btn-primary ]" type="submit"><span class="[ glyphicon glyphicon-search ]"></span></button>
+									<button class="[ btn btn-danger ]" type="reset"><span class="[ glyphicon glyphicon-remove ]"></span></button>
+								</span>
+							</div>
+						</form>
+					</li>
+					<li><a href="/feed/" class="[  animate  ]">
+					<span> Feed </span>
+					<span class="fa-lg pull-left"><i class="fa fa-globe"></i></span>
+				</a></li>
+				    <li>
+				        <a href="/entries/new" class="animate">
+					    <span class="desc animate"> New Entry </span>
+					    <span class="fa-lg pull-left"><i class="fa fa-pencil-square"></i></span>
+				        </a>
+			        </li>
+					<li>
+					 <% if logged_in? %>
+
+                        <%= link_to '<span class="desc animate"> Your Journal </span><span class="fa-lg pull-left"><i class="fa fa-address-book"></i></span>'.html_safe, user_path(current_user), :class => "animate" %>  
                         
                         <% else %>
                         
                         <%= link_to '<span class="desc animate"> Login </span><span class="fa-lg pull-left"><i class="fa fa-address-book"></i></span>'.html_safe, login_path, :class => "animate" %>
                         
                         <% end %> 
-            </li>
-		</ul>
+                    </li>
+                    <li class="[ hidden-xs ]"><a href="#toggle-search" class="[ animate ]"><span class="[ glyphicon glyphicon-search ]"></span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="[ bootsnipp-search animate ]">
+			<div class="[ container ]">
+				<form action="http://bootsnipp.com/search" method="GET" role="search">
+					<div class="[ input-group ]">
+						<input type="text" class="[ form-control ]" name="q" placeholder="Search for snippets and hit enter">
+						<span class="[ input-group-btn ]">
+							<button class="[ btn btn-danger ]" type="reset"><span class="[ glyphicon glyphicon-remove ]"></span></button>
+						</span>
+					</div>
+				</form>
+			</div>
+		</div>
 	</nav>
+    
+  
 
         <!-- Page Content -->
         <div id="page-content-wrapper" style="margin-left:0;">
@@ -78,6 +119,7 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
 
 
 

@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top:50px;">
      
 <h1>
   Popular Journal Entries for
@@ -23,22 +23,14 @@
   <tbody>
   
             <% @entries.each do |entry| %>
-            <div class="media">
-          <div class="media-right media-middle">
-            <a href="#">
-              <span class="glyphicon glyphicon-globe"> </span>
-            </a>
-          </div>
-          <div class="media-body">
-
-          <div class="row">
-
-            <div class="col-md-9">
-              <h4 class="media-heading" > 
+            <div class="media" style="    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);">
+              <h3 class="media-heading" > 
                 <span style="font-size:20px">
                 <%= link_to entry.name, entry %></span>
-              </h4>
-
+              </h3>
+          <div class="media-body">
+          <div class="row">
+            <div class="col-md-9">
               <div class="media-content">
                 <%= entry.content %>
               </div>
@@ -69,8 +61,13 @@
                    <br>
                        
                        
-                      
-                  <span class= "pull-right" style="font-size:20px; height:50px; line-height:50px">  <b><%= entry.points %></b>  </span>
+                  <a href="#" class="pull-right" style="font-size:20px;">  
+                  <div class="glyphicon glyphicon-globe one">
+                  </div>
+                  <div class="two" style="text-align:center">
+                    <b><%= entry.points %></b>
+                  </div>
+                  </a>
              </div>   
             </div>
             

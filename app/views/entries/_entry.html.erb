@@ -1,24 +1,18 @@
 <% obj.each do |entry| %> 
-            <div class="media">
-          <div class="media-right media-middle">
-            <a href="#">
-              <span class="glyphicon glyphicon-globe"> </span>
-            </a>
-          </div>
-          <div class="media-body">
-
-          <div class="row">
-
-            <div class="col-md-9">
+            
+        <div class="media" style="box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);">
               <h4 class="media-heading" >
-                <%= entry.created_at %>
+                
                 <span style="font-size:20px">
                 <%= link_to entry.name, entry_path(entry) %>
                 </span>
+                <span class="pull-right"><%= entry.created_at.strftime(" %B %C, %G") %></span>
               </h4>
-
+          <div class="media-body">
+          <div class="row">
+            <div class="col-md-9">
               <div class="media-content">
-                <%= truncate(entry.content, length: 200) %>
+                <%= entry.content %>
               </div>
 
             </div>
@@ -27,18 +21,33 @@
               <div class="media-info">
                       <span class= "pull-right" style="font-size:12px; color: blue">
                       <% if defined? entry.user.username? %>
-                      <%= entry.user.username %>
+                      <%= link_to entry.user.username, user_path(entry.user) %>
                       <% else %>
                       <p>Anonymous</p>
                       <% end %>
                       </span> <br>
                   
-                       <% if defined? entry.user.country? %>
-                  <span class= "pull-right" style="font-size:10px"><%= entry.user.country %>, <%= entry.user.city %></span> <br>
-                       <% else %> 
-                       <p>Unknown</p>
-                       <% end %>
-                  <span class= "pull-right" style="font-size:20px; height:50px; line-height:50px">  <b><%= entry.points %></b>  </span>
+                       
+
+                  <span class= "pull-right" style="font-size:10px">
+                  <% if defined? entry.country? %>
+                    <p> <%= entry.country %>, <%= entry.city %></p>
+
+                  <% elsif defined? entry.user.country %> 
+                   <p> <%= entry.user.country %>, <%= entry.user.city %></p></span> 
+                  <% else %> 
+                  <p>Unknown</p>
+                 <% end %>
+                   <br>
+                       
+                       
+                  <a href="#" class="pull-right" style="font-size:20px;">  
+                  <div class="glyphicon glyphicon-globe one">
+                  </div>
+                  <div class="two" style="text-align:center">
+                    <b><%= entry.points %></b>
+                  </div>
+                  </a>
              </div>   
             </div>
             
@@ -54,17 +63,9 @@
                       Posted: <%= time_ago_in_words(entry.created_at) %> ago
                     </span><br>
                     <span class="pull-right"> <%= link_to 'Show', entry %> </span>
-              </div> 
-               <%= link_to "Edit this journal entry.", edit_entry_path(entry), class: "btn btn-xs btn-primary" %> 
-            	<%= link_to "Delete this journal entry.", entry_path(entry), method: :delete, data: {confirm: "Are you sure you want to delete the entry?"},
-            	class: "btn btn-xs btn-danger" %> 
+              </div>  
+             <%= link_to 'Unite', entry_addpoint_path(entry), method: :put, class: "btn btn-xs btn-primary" %>
             </div>
-            </div>
-
-            <div class="row">
-            	
-            	
-
             </div>
 
           
@@ -75,4 +76,9 @@
                  
           </div>
         </div>
+        
+        
+        LOL
+            
+          
          <% end %>

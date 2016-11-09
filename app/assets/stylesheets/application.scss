@@ -11,12 +11,30 @@
  * file per style scope.
  *
  */
+#page-content-wrapper {
+  background-image: url(confectionary.png);
+  background-attachment: fixed;
+  
+}
+ 
 @import "set1";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
 @import "sidebar";
 
+.one{
+    position:relative;
+    left:0;
+    top:0;
+    z-index:0;
+}
+.two{
+    position:relative;
+    left:10px;
+    top:0px;
+    z-index:1;
+}
 
 #radioBtn .notActive{
     color: #3276b1;
@@ -25,11 +43,11 @@
 
 .media-body
 {
-  width: 100%;
-  border-style: solid;
-  border-width: 1px;
-  border-radius:7px;
+  width: 2000px;
+  border-top: thick groove #000;
+  border-radius:0px;
   margin-top: 10px;
+  
 }
 
 .media-body > span
@@ -55,6 +73,15 @@
 {
   margin-top: 10px;
   margin-right: 10px;
+  
+}
+
+.media
+{
+  background: url(confectionary.png);
+  background:rgba(255,255,255, 0.75); 
+
+  
   
 }
 
