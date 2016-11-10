@@ -5,6 +5,11 @@ class EntriesController < ApplicationController
   # GET /entries.json
   def index
     @entries = Entry.all
+    if params[:search]
+      @entries = Entry.search(params[:search]).order("created_at DESC")
+    else
+      @entries = Entries.all.order("points DESC")
+    end
   end
 
   def feed
