@@ -24,10 +24,11 @@
   
             <% @entries.each do |entry| %>
             <div class="media" style="    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);">
-              <h3 class="media-heading" > 
-                <span style="font-size:20px">
-                <%= link_to entry.name, entry %></span>
-              </h3>
+              <span style="media-heading">
+              <h3 class="font-size:20px" > 
+                <%= link_to entry.name, entry %></h3>
+              </span>
+              
           <div class="media-body">
           <div class="row">
             <div class="col-md-9">
@@ -48,22 +49,19 @@
                       </span> <br>
                   
                        
-
                   <span class= "pull-right" style="font-size:10px">
-                  <% if defined? entry.country? %>
-                    <p> <%= entry.country %>, <%= entry.city %></p>
-
-                  <% elsif defined? entry.user.country %> 
-                   <p> <%= entry.user.country %>, <%= entry.user.city %></p></span> 
+                  <% if entry.country? %>
+                    <%= entry.country %>, <%= entry.city %>
+                  <% elsif !entry.user.nil? && entry.user.country? %> 
+                   <%= entry.user.country %>, <%= entry.user.city %>
                   <% else %> 
-                  <p>Unknown</p>
+                  Unknown
                  <% end %>
+                 </span>
                    <br>
                        
                        
                   <a href="#" class="pull-right" style="font-size:20px;">  
-                  <div class="glyphicon glyphicon-globe one">
-                  </div>
                   <div class="two" style="text-align:center">
                     <b><%= entry.points %></b>
                   </div>

@@ -28,6 +28,20 @@
     	<input type="hidden" name="fun" id="fun">
     </div>
     
+    <span class="input input--minoru h2" style="margin-left:30px;font-size:80%;width:150px">
+        <%= f.text_field :city,  :class => "input__field input__field--yoko", :value => request.location.city %>
+        <label for="entry_name" class="input__label input__label--yoko">
+          <span class="input__label-content input__label-content--yoko">City</span>
+          </label>
+      </span>
+      
+      <span class="input input--minoru h2" style="font-size:80%;width:150px">
+        <%= f.text_field :country,  :class => "input__field input__field--yoko", :value => request.location.country %>
+        <label for="entry_name" class="input__label input__label--yoko">
+          <span class="input__label-content input__label-content--yoko">Country</span>
+          </label>
+      </span>
+    
 
 
 
