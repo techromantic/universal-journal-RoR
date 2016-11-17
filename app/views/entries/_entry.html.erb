@@ -1,12 +1,21 @@
-<% obj.each do |entry| %> 
+<% previous_date = "" %>
+<% obj.each do |entry| %>
+
+<% current_date = "" %> 
+<% current_date = (entry.created_at.strftime"%B %e %Y ")%>
+<% if !(current_date == previous_date) %> 
+<%= (entry.created_at.strftime"%B %e, %Y ")%>
+<% end %> 
+<% previous_date = (entry.created_at.strftime"%B %e %Y ")%>
             
         <div class="media" style="box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);">
               <h4 class="media-heading" >
-                
                 <span style="font-size:20px">
-                <%= link_to entry.name, entry_path(entry) %>
+                <%= link_to entry.name, entry_path(entry), :class => "media-title" %>
                 </span>
-                <span class="pull-right"><%= entry.created_at.strftime(" %B %C, %G") %></span>
+                <span class="pull-right"><i class="fa fa-pencil" aria-hidden="true"></i>
+                <i class="fa fa-cog" aria-hidden="true"></i>
+                <i class="fa fa-trash-o" aria-hidden="true"></i></span>
               </h4>
           <div class="media-body">
           <div class="row">
@@ -42,8 +51,6 @@
                        
                        
                   <a href="#" class="pull-right" style="font-size:20px;">  
-                  <div class="glyphicon glyphicon-globe one">
-                  </div>
                   <div class="two" style="text-align:center">
                     <b><%= entry.points %></b>
                   </div>

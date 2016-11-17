@@ -8,7 +8,7 @@ class EntriesController < ApplicationController
     if params[:search]
       @entries = Entry.search(params[:search]).order("created_at DESC")
     else
-      @entries = Entries.all.order("points DESC")
+      
     end
   end
 
