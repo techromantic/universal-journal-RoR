@@ -3,6 +3,7 @@
 <head>
   <title>Universaljournal</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Average+Sans|Open+Sans' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
@@ -10,7 +11,7 @@
 <body>
     <div id="page-content-wrapper" style="margin-left:0;">
     <div class="container">
-    <h4 align="center">Universal Journal</h1>
+    <h4 align="center" class="top-nav">Universal <%= image_tag("uj.png", :alt => "Join the Universe", height: '24', width: '24') %> Journal</h1>
     <nav class="navbar navbar-default" role="navigation">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -25,10 +26,18 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-					<li><a href="/feed/" class="[  animate  ]">
-					<span> Feed </span>
-					<span class="fa-lg pull-left"><i class="fa fa-globe"></i></span>
-				</a></li>
+                <li>
+                    <a href="/feed/" class="[  animate  ]">
+					    <span> Home </span>
+					    <span class="fa-lg pull-left"><i class="fa fa-globe"></i></span>
+				    </a>
+				</li>
+				<li>
+                    <a href="/feed/" class="[  animate  ]">
+					    <span> Feed </span>
+					    <span class="fa-lg pull-left"><i class="fa fa-globe"></i></span>
+				    </a>
+				</li>
 				    <li>
 				        <a href="/entries/new" class="animate">
 					    <span class="desc animate"> New Entry </span>
