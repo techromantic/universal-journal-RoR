@@ -1,9 +1,9 @@
 <div class="container-fluid" style="margin-top:50px;">
      
 <h1>
-  Popular Journal Entries for
+ <i> Popular Journal Entries for
   <%= Time.now.strftime("%m/%d/%Y")%>
-
+</i>
 </h1>
 
 
@@ -33,7 +33,7 @@
           <div class="row">
             <div class="col-md-9">
               <div class="media-content">
-                <%= entry.content %>
+               <i><%= entry.content %></i> 
               </div>
             </div>
             <div class="col-md-3">
@@ -78,7 +78,9 @@
                     </span><br>
                     <span class="pull-right"> <%= link_to 'Show', entry %> </span>
               </div>  
-             <%= link_to 'Unite', entry_addpoint_path(entry), method: :put, class: "btn btn-xs btn-primary" %>
+             <% if logged_in? && (current_user == entry.user || current_user.admin?) %> 
+              <%= link_to 'Edit', edit_entry_path(@entries) %> |
+            <% end %>
             </div>
             </div>
 

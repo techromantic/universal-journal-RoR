@@ -3,7 +3,8 @@
 <head>
   <title>Universaljournal</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Average+Sans|Open+Sans' %>
+  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Lato:100|Roboto:300,300i' %>
+ 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
@@ -11,7 +12,7 @@
 <body>
     <div id="page-content-wrapper" style="margin-left:0;">
     <div class="container">
-    <h4 align="center" class="top-nav">Universal <%= image_tag("uj.png", :alt => "Join the Universe", height: '24', width: '24') %> Journal</h1>
+    <h4 align="center" class="top-nav"><%= image_tag("ujSLEEK.png", :alt => "Join the Universe", height: '100', width: '400') %></h1>
     <nav class="navbar navbar-default" role="navigation">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -28,26 +29,26 @@
         <ul class="nav navbar-nav">
                 <li>
                     <a href="/feed/" class="[  animate  ]">
-					    <span> Home </span>
+					    <span> HOME </span>
 					    <span class="fa-lg pull-left"><i class="fa fa-globe"></i></span>
 				    </a>
 				</li>
 				<li>
                     <a href="/feed/" class="[  animate  ]">
-					    <span> Feed </span>
+					    <span> FEED </span>
 					    <span class="fa-lg pull-left"><i class="fa fa-globe"></i></span>
 				    </a>
 				</li>
 				    <li>
 				        <a href="/entries/new" class="animate">
-					    <span class="desc animate"> New Entry </span>
+					    <span class="desc animate"> WRITE </span>
 					    <span class="fa-lg pull-left"><i class="fa fa-pencil-square"></i></span>
 				        </a>
 			        </li>
 					<li>
 					 <% if logged_in? %>
 
-                        <%= link_to '<span class="desc animate">Journal</span><span class="fa-lg pull-left"><i class="fa fa-address-book"></i></span>'.html_safe, user_path(current_user), :class => "animate" %>  
+                        <%= link_to '<span class="desc animate">MY Journal</span><span class="fa-lg pull-left"><i class="fa fa-address-book"></i></span>'.html_safe, user_path(current_user), :class => "animate" %>  
                         
                         <% else %>
                         

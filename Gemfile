@@ -30,7 +30,6 @@ gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 gem "ckeditor"
 gem 'geocoder'
 
-
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 

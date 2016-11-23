@@ -39,5 +39,7 @@
   <%= @entry.points %>
 </p>
 
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
+  <% if logged_in? && (current_user == entry.user || current_user.admin?) %> 
+              <%= link_to 'Edit', edit_entry_path(@entry) %> |
+            <% end %>
 <%= link_to 'Back', entries_path %>

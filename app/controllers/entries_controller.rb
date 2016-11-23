@@ -29,11 +29,6 @@ class EntriesController < ApplicationController
   def edit
   end
 
-  def addpoint
-    @entry = Entry.find params[:id]
-    @entry.increment! :points
-  end
-
 
   # POST /entries
   # POST /entries.json

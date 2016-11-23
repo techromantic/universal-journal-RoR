@@ -1,12 +1,15 @@
   textarea {
 
     border: 0.1em solid #ccc;
+	font-family: 'Roboto', sans-serif;
 
     border-radius: 0.5em;
 
  }
 
 .input {
+	font-family: 'Roboto', sans-serif;
+	
 	position: relative;
 	z-index: 1;
 	display: inline-block;
@@ -27,7 +30,7 @@
 	background: #f0f0f0;
 	color: #aaa;
 	font-weight: 400;
-	font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Roboto', sans-serif;
 	-webkit-appearance: none; /* for box shadows to show on iOS */
 }
 
@@ -36,6 +39,8 @@
 }
 
 .input__label {
+	font-family: 'Roboto', sans-serif;
+
 	display: inline-block;
 	float: right;
 	padding: 0 1em;

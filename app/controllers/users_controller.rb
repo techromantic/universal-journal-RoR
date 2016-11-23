@@ -31,12 +31,12 @@ class UsersController < ApplicationController
 
     
       if @user.save
-        redirect_to :action => :index, :notice => "Welcome to Universal Journal!"
-
+        session[:user_id] = @user.id
+        flash[:success] = "Welcome to the alpha blog #{@user.username}"
+        redirect_to user_path(@user)
       else
         render 'new'
       end
-    
   end
 
   # PATCH/PUT /users/1
