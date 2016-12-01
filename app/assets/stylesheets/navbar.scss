@@ -44,6 +44,7 @@
 .navbar .nav li a {
 border-left: 1px solid rgba(255, 255, 255, .75);
     border-right: 1px solid rgba(0, 0, 0, .1);
+    margin-top: 20px;
     display: block;
     text-transform: uppercase;
     font-size: 30px;
@@ -53,8 +54,9 @@ border-left: 1px solid rgba(255, 255, 255, .75);
    
 }
 
-.navbar .nav li a p {
-   
+.navbar .nav li a span i 
+{
+    margin-top: 0px;
 }
 
 .navbar .nav li:first-child a {
