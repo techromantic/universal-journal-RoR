@@ -79,7 +79,7 @@
                     <span class="pull-right"> <%= link_to 'Show', entry %> </span>
               </div>  
              <% if logged_in? && (current_user == entry.user || current_user.admin?) %> 
-              <%= link_to 'Edit', edit_entry_path(@entries) %> |
+              <%= link_to 'Edit', edit_entry_path(entry) %> |
             <% end %>
             </div>
             </div>
