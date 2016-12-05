@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124192304) do
+ActiveRecord::Schema.define(version: 20161205175827) do
 
   create_table "entries", force: :cascade do |t|
     t.string   "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20161124192304) do
     t.integer  "user_id"
     t.string   "country"
     t.string   "city"
+    t.integer  "keyword_id"
   end
 
   create_table "keywords", force: :cascade do |t|

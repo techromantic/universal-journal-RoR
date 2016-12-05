@@ -1,9 +1,9 @@
 <div class="container-fluid" style="margin-top:50px;">
      
 <h1>
- <i> Popular Journal Entries for
-  <%= Time.now.strftime("%m/%d/%Y")%>
-</i>
+  Popular Journal Entries for
+  <%= Time.now.strftime("%m/%d/%Y")%> | <%= link_to 'New', new_entry_url %>
+
 </h1>
 
 

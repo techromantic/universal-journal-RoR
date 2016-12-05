@@ -1,7 +1,7 @@
 class KeywordsController < ApplicationController
 
 	def index
-		@keywords = Kevword.all
+		@keyword = Keyword.all
 	end
 
 	def new 
@@ -9,11 +9,11 @@ class KeywordsController < ApplicationController
 	end 
 
 	def create
-		@keyword = Keyword.new(category_params)
+		@keyword = Keyword.new(keyword_params)
 
 		if @keyword.save
 			flash[:notice] = "Category was created successfully."
-			redirect_to categories_path
+			redirect_to keyword_path
 		else
 			render 'new'
 		end 
@@ -23,8 +23,8 @@ class KeywordsController < ApplicationController
 	end 
 
 	private
-	def category_params
-		params.require(:category).permit(:name)
+	def keyword_params
+		params.require(:keyword).permit(:name)
 	end
 	
 end

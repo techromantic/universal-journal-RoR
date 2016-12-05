@@ -23,6 +23,7 @@ class EntriesController < ApplicationController
   # GET /entries/new
   def new
     @entry = Entry.new
+    @entry.keyword = Keyword.new
   end
 
   # GET /entries/1/edit
@@ -67,6 +68,15 @@ class EntriesController < ApplicationController
     end
   end
 
+
+  def keyword
+    @keyword
+  end 
+
+  def keyword_attributes=(attributes)
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_entry
@@ -75,6 +85,6 @@ class EntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entry_params
-      params.require(:entry).permit(:name, :username, :country, :city, :content, :points)
+      params.require(:entry).permit(:name, :username, :country, :city, :content, :points, :keyword_attributes => [:name])
     end
 end
