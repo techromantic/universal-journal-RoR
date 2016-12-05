@@ -12,6 +12,16 @@
   <% end %>
 
 
+ <%= fields_for :keyword do |u| %>
+<span class="input input--minoru h2">
+   <%= u.text_field :name, :class => "input__field input__field--minoru"%>
+    <label for="keyword_name" class="input__label input__label--minoru">
+        <span class="input__label-content input__label-content--minoru">Keyword</span>
+        </label>
+  </span>
+ <% end %>
+
+
     <span class="input input--minoru h2">
       <%= f.text_field :name,  :class => "input__field input__field--minoru" %>
       <label for="entry_name" class="input__label input__label--minoru">

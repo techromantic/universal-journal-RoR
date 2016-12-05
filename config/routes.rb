@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :entries do
       put :addpoint
     end
-  resources :categories, except: [:destroy]
+  resources :keywords, except: [:destroy]
   
 
   root 'entries#index'
