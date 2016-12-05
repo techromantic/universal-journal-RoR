@@ -11,18 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205175827) do
+ActiveRecord::Schema.define(version: 20161205180831) do
 
   create_table "entries", force: :cascade do |t|
     t.string   "name"
     t.text     "content"
     t.integer  "points"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "user_id"
     t.string   "country"
     t.string   "city"
     t.integer  "keyword_id"
+    t.boolean  "private",    default: false
+    t.boolean  "anon",       default: false
   end
 
   create_table "keywords", force: :cascade do |t|
