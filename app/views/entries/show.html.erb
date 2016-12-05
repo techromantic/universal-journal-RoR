@@ -11,16 +11,13 @@
 
 
                       
-<p>
-  <strong>Country:</strong>
-  <%= @entry.user.country %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @entry.user.city %>
-</p>
-
+<% if @entry.country? %>
+                    <%= @entry.country %>, <%= @entry.city %>
+                  <% elsif !@entry.user.nil? && @entry.user.country? %> 
+                   <%= @entry.user.country %>, <%= @entry.user.city %>
+                  <% else %> 
+                  Anonymous
+                  <% end %>
 <p>
   <strong>Title:</strong>
   <%= @entry.name%>
